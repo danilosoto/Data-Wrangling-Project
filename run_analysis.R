@@ -16,6 +16,7 @@ setwd("~/Dropbox/My Slide Rule/Foundations of Data Science/Data Wrangling Projec
 # Download dataset
 if (!file.info("UCI HAR Dataset")$isdir) {
   dataFile <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+  dir.create('UCI HAR Dataset')
   download.file(dataFile, "./UCI-HAR-dataset.zip", method="curl")
   unzip("./UCI-HAR-dataset.zip")
 }

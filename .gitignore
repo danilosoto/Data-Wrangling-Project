@@ -6,3 +6,5 @@ UCI HAR Dataset/features_info.txt
 UCI HAR Dataset/train/y_train.txt
 
 *.txt
+
+*.zip
