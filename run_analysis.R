@@ -1,5 +1,4 @@
 # Packages needed pro project
-
 if (!require("readr")) {
   install.packages("readr")
 }
