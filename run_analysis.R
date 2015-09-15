@@ -14,12 +14,12 @@ library(dplyr)
 setwd("~/Dropbox/My Slide Rule/Foundations of Data Science/Data Wrangling Project")
 
 # Download dataset
-if (!file.info("UCI HAR Dataset")$isdir) {
-  dataFile <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-  dir.create('UCI HAR Dataset')
-  download.file(dataFile, "./UCI-HAR-dataset.zip", method="curl")
-  unzip("./UCI-HAR-dataset.zip")
-}
+if (!file.info("UCI HAR Dataset")$isdir)
+  suppressWarnings(dir.create("UCI HAR Dataset"))
+dataFile <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+#download the zipped file
+download.file(dataFile, "UCI-HAR-Dataset.zip", method ="curl")
+unzip("./UCI-HAR-Dataset.zip")
 
 # View all files in the dataset folder
 path <- file.path("UCI HAR Dataset")
