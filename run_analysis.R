@@ -1,15 +1,29 @@
+# Packages needed pro project
+
+if (!require("readr")) {
+  install.packages("readr")
+}
+if (!require("dplyr")) {
+  install.packages("dplyr")
+}
+
 library(readr)
-library(tidyr)
-library(stringr)
 library(dplyr)
 
-# setwd("~/Dropbox/My Slide Rule/Foundations of Data Science/Data Wrangling Project")
+# Set working directory
+setwd("~/Dropbox/My Slide Rule/Foundations of Data Science/Data Wrangling Project")
 
+# Download dataset
+if (!file.info("UCI HAR Dataset")$isdir) {
+  dataFile <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+  download.file(dataFile, "./UCI-HAR-dataset.zip", method="curl")
+  unzip("./UCI-HAR-dataset.zip")
+}
+
+# View all files in the dataset folder
 path <- file.path("UCI HAR Dataset")
 files <- list.files(path, recursive=TRUE)
 files
-
-# You should create one R script called run_analysis.R that does the following:
 
 # -----------------------------------------------------------------------------
 # 1. Merges the training and the test sets to create one data set.
@@ -50,3 +64,4 @@ subject <- bind_rows(xsubject_train, xsubject_test)
 bd <- bind_cols(subject, extract_activity_names)
 
 tidy <- bd %>% select(-ACTIVITY) %>% group_by(SUBJECT, ACTIVITY_NAME) %>% summarise_each(funs(mean))
+write_csv(tidy, "tidy.csv")
