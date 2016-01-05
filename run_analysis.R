@@ -65,3 +65,4 @@ bd <- bind_cols(subject, extract_activity_names)
 
 tidy <- bd %>% select(-ACTIVITY) %>% group_by(SUBJECT, ACTIVITY_NAME) %>% summarise_each(funs(mean))
 write_csv(tidy, "tidy.csv")
+write.table(tidy, "tidy.txt",row.name=FALSE)
