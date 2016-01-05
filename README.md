@@ -1,5 +1,5 @@
 # Data Wrangling Project
-Part of [My Slide Rule Foundations of Data Science Workshop](https://www.mysliderule.com/workshops/data-science/learn#452-data-wrangling)
+Part of [My Slide Rule Foundations of Data Science Workshop](https://www.mysliderule.com/workshops/data-science/learn#452-data-wrangling) and [Coursera's Getting and Cleaning Data Course Project](https://www.coursera.org/learn/data-cleaning/peer/FIZtT/getting-and-cleaning-data-course-project)
 
 ####Project Description
 One of the most exciting areas in all of data science right now is wearable computing. Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. In this project, you will analyze this dataset collected from the accelerometers from the Samsung Galaxy S smartphone. 
